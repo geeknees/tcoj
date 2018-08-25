@@ -1,41 +1,69 @@
+import 'typeface-roboto'
+import './style.css'
+
 import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
+import styled from 'styled-components'
+import gray from 'gray-percentage'
 
-import Header from '../components/header'
-import './index.css'
+import Link from 'gatsby-link'
 
-const Layout = ({ children, data }) => (
-  <div>
-    <Helmet
-      title={data.site.siteMetadata.title}
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
-    />
-    <Header siteTitle={data.site.siteMetadata.title} />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
-      {children()}
-    </div>
-  </div>
-)
+import { rhythm } from '../utils/typography'
 
-Layout.propTypes = {
-  children: PropTypes.func,
+import Container from '../components/Container'
+import Hashira from '../components/Hashira'
+
+const Contents = styled.div`
+  height: 100%;
+  min-width: 100%;
+  position: relative;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: ${rhythm(2.8)} ${rhythm(3 / 4)} ${rhythm(2.2)} ${rhythm(3 / 4)};
+`
+
+class Template extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { scrollLeft: 0 }
+    this.scroll = this.scroll.bind(this)
+  }
+  componentDidMount() {
+    this.scrollable = document.querySelector('.scrollable')
+  }
+  scroll(event) {
+    if (event.deltaY != 0) {
+      this.state = this.state + event.deltaY * 3
+      event.preventDefault()
+    }
+    return
+  }
+
+  render() {
+    const siteTitle = this.props.data.site.siteMetadata.title
+
+    return (
+      <Container title={siteTitle} path={this.props.location.pathname}>
+        <Hashira>
+          <Link
+            style={{
+              fontSize: `0.8em`,
+              color: gray(45),
+            }}
+            to={'/'}
+          >
+            {siteTitle}
+          </Link>
+        </Hashira>
+        <Contents>{this.props.children()}</Contents>
+      </Container>
+    )
+  }
 }
 
-export default Layout
+export default Template
 
-export const query = graphql`
-  query SiteTitleQuery {
+export const layoutQuery = graphql`
+  query layoutQuery {
     site {
       siteMetadata {
         title
