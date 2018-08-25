@@ -31,12 +31,6 @@ class BlogPostTemplate extends React.Component {
       <div>
         <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
         <Title>{post.frontmatter.title}</Title>
-        <Hizuke
-          style={{
-            textAlign: 'right',
-          }}
-          date={new Date(post.frontmatter.date)}
-        />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <Komejirushi style={{ marginRight: `10rem` }} />
         <Recommend style={{ marginLeft: `9rem` }} posts={recommends} />

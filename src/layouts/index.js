@@ -46,8 +46,7 @@ class Template extends React.Component {
         <Hashira>
           <Link
             style={{
-              fontSize: `0.8em`,
-              color: gray(45),
+              color: gray(15),
             }}
             to={'/'}
           >

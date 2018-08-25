@@ -37,7 +37,7 @@ export default ({ style, next, previous }) => {
           to={previous.fields.slug}
           rel="prev"
         >
-          ↑ 前
+          ↓ 次
         </Tumekake>
       ) : (
         <Space />
@@ -48,7 +48,7 @@ export default ({ style, next, previous }) => {
           to={next.fields.slug}
           rel="next"
         >
-          次 ↓
+          前 ↑
         </Tumekake>
       )}
     </NavigationBar>

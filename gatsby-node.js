@@ -46,7 +46,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         })
 
         // Create index pages.
-        const limit = 5
+        const limit = 12
         let groups = []
         for (var i = 0; i < posts.length; i += limit) {
           groups.push(posts.slice(i, i + limit))

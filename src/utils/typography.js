@@ -7,16 +7,6 @@ const theme = {
   baseFontSize: '18px',
   baseLineHeight: 1.75,
   scaleRatio: 5 / 2,
-  // googleFonts: [
-  //   {
-  //     name: 'Open Sans',
-  //     styles: ['200', '400', '400i', '700'],
-  //   },
-  //   {
-  //     name: 'Roboto',
-  //     styles: ['200', '400', '400i', '700'],
-  //   },
-  // ],
   headerFontFamily: [
     'Roboto Regular',
     '-apple-system',
@@ -132,12 +122,6 @@ const theme = {
       paddingRight: `0.875rem`,
       paddingLeft: `calc(0.875rem - 1px)`,
     },
-    // 'mark,ins': {
-    //   background: '#007acc',
-    //   color: 'white',
-    //   padding: `${rhythm(1 / 8)} ${rhythm(1 / 16)}`,
-    //   textDecoration: 'none',
-    // },
   }),
 }
 

@@ -16,7 +16,7 @@ const FixedHeader = styled.div`
   font-family: ${bodyFontFamily.join(' ')};
 
   & a {
-    box-shadow: 0 1px 0 0 currentColor;
+    box-shadow: none;
   }
   & a:hover,
   a:active {

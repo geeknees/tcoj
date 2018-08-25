@@ -34,7 +34,9 @@ const Number = styled.span`
 class BlogIndexTemplate extends React.Component {
   render() {
     const siteTitle = this.props.data.site.siteMetadata.title
-    const { pathContext: { group, page, nextPath, prevPath } } = this.props
+    const {
+      pathContext: { group, page, nextPath, prevPath },
+    } = this.props
 
     return (
       <div>

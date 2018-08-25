@@ -27,8 +27,7 @@ export default ({ style, date }) => {
     <p style={Object.assign({ textIndent: 0 }, style)}>
       <HorizontalYear>{year}</HorizontalYear>年
       <HorizontalNumber>{month}</HorizontalNumber>月
-      <HorizontalNumber>{day}</HorizontalNumber>日
-      <Youbi>{`(${youbi})`}</Youbi>
+      <HorizontalNumber>{day}</HorizontalNumber>日<Youbi>{`(${youbi})`}</Youbi>
     </p>
   )
 }

@@ -28,14 +28,6 @@ export const Koumoku = ({ title, date }) => (
   <Body>
     <Title>{title}</Title>
     <Line />
-    <Hizuke
-      style={{
-        marginLeft: 0,
-        flex: `0 0 182px`,
-        textAlign: `right`,
-      }}
-      date={new Date(date)}
-    />
   </Body>
 )
 
@@ -53,7 +45,7 @@ export const Bassui = ({ text }) => (
 const Label = styled.p`
   font-size: 1.3em;
   text-align: center;
-  letter-spacing: 6rem;
+  letter-spacing: 2rem;
   margin-left: 1.8rem;
   font-weight: 600;
 `
@@ -75,7 +67,7 @@ export const Mokuji = ({ style, posts }) => {
   return (
     <div style={style}>
       <ul style={{ listStyle: `none` }}>
-        <Label>目次</Label>
+        <Label>日本国憲法</Label>
         {posts.map(post => (
           <Item>
             <Navigation to={post.node.fields.slug}>
